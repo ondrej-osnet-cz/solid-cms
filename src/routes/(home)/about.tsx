@@ -14,8 +14,8 @@ export default function About() {
         to learn how to build Solid apps.
       </p>
       <p class="my-4">
-        <A href="/" class="text-sky-600 hover:underline">
-          Home
+        <A href="/login" class="text-sky-600 hover:underline">
+          Login
         </A>
         {' - '}
         <span>About Page</span>
