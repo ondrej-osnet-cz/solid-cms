@@ -1,4 +1,5 @@
 import { render } from "solid-js/web";
+import '../src/root.css';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
