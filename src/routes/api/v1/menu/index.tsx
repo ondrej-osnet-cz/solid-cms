@@ -3,5 +3,6 @@ import MenuModel from '~/libs/server/database/models/menu/menu.model';
 
 export async function GET({ params }: APIEvent) {
   const menu = await MenuModel.findOne();
-  return json({ menu });
+  console.log('API get menu items', menu);
+  return json(menu);
 }

@@ -1,15 +1,18 @@
-import { For, onMount, Suspense } from 'solid-js';
+import { For, createResource, onMount } from 'solid-js';
 import { A, Outlet, useLocation, useRouteData } from 'solid-start';
-import { createServerData$ } from 'solid-start/server';
-import MenuModel from '~/libs/server/database/models/menu/menu.model';
+import { Menu } from '~/libs/core/bo/menu';
 
 export function routeData() {
-  return createServerData$(() => MenuModel.findOne());
+  const [menu] = createResource(async () => {
+    const response = await fetch('http://localhost:3000/api/v1/menu');
+    return (await response.json()) as Menu;
+  });
+  return { menu };
 }
 
 export default function Layout() {
   console.log('Layout');
-  const menu = useRouteData<typeof routeData>();
+  const { menu } = useRouteData<typeof routeData>();
 
   onMount(() => {
     console.log('Layout onMount', menu());
@@ -27,7 +30,7 @@ export default function Layout() {
   };
 
   return (
-    <Suspense>
+    <>
       <nav class="bg-sky-800">
         <ul class="container flex items-center p-3 text-gray-200">
           <For each={menu()?.items} fallback={<div>Loading...</div>}>
@@ -40,6 +43,6 @@ export default function Layout() {
         </ul>
       </nav>
       <Outlet></Outlet>
-    </Suspense>
+    </>
   );
 }
