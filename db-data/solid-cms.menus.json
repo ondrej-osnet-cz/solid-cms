@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "640da78e26a731484c27aa24"
+  },
+  "name": "Top menu",
+  "items": [
+    {
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "label": "About",
+      "url": "/about"
+    }
+  ]
+}]

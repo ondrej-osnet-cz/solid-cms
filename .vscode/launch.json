@@ -16,7 +16,7 @@
       "runtimeArgs": ["--profile-directory=debug-profile"]
     },
     {
-      "command": "npm run dev",
+      "command": "docker compose -f \"docker-compose.yml\" up -d --build && npm run dev",
       "name": "Client debug",
       "cwd": "${workspaceFolder}",
       "request": "launch",

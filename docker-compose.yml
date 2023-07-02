@@ -8,6 +8,15 @@ services:
       - '27017:27017'
     volumes:
       - mongodb_data:/data/db
+      - ./db-data/solid-cms.menus.json:/src/data/solid-cms.menus.json
+
+  mongo-import:
+    image: mongo:latest
+    volumes:
+      - ./db-data/solid-cms.menus.json:/src/data/solid-cms.menus.json
+    command: mongoimport --host mongodb --db solid-cms --collection menus --jsonArray --file /src/data/solid-cms.menus.json
+    links:
+      - mongodb
 
 volumes:
   mongodb_data:
