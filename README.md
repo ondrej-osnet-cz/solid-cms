@@ -14,7 +14,7 @@ npm init solid@latest my-app
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), you need mongodb with data. Data is in db-data folder. Or you can just simple run command
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), you need mongodb with data. Data is in db-data folder and needs to be imported to db `solid-cms` and collection `menus`. Or you can just simple run command
 
 ```bash
 npm run run-mongo-db
