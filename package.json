@@ -4,6 +4,7 @@
     "dev": "solid-start dev",
     "build": "solid-start build",
     "start": "solid-start start",
+    "run-mongo-db": "docker compose -f \"docker-compose.yml\" up -d --build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
