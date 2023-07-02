@@ -14,7 +14,16 @@ npm init solid@latest my-app
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), you need mongodb with data. Data is in db-data folder. Or you can just simple run command
+
+```bash
+npm run run-mongo-db
+```
+
+(Docker required, free port 27017 required)
+It starts MongoDb on port 27017 and imports test data.
+
+To start a development server run:
 
 ```bash
 npm run dev
